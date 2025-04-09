@@ -9,7 +9,7 @@ const About = () => {
   const [aboutDescription, setAboutDescription] = useState('');
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/getProfilePicture')
+    fetch('https://my-portfolio-backend-ten.vercel.app/api/getProfilePicture')
       .then((res) => res.json())
       .then((data) => {
          // data.image is the base64 string
@@ -22,7 +22,7 @@ const About = () => {
 
   
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/getAboutDescription')
+    fetch('https://my-portfolio-backend-ten.vercel.app/api/getAboutDescription')
     .then((res) => res.json())
     .then((data) => {
       setAboutDescription(data.description);

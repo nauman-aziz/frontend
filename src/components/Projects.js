@@ -11,7 +11,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/projects')
+    fetch('https://my-portfolio-backend-ten.vercel.app/api/projects')
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
