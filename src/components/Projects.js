@@ -14,7 +14,7 @@ const Projects = () => {
 
   useEffect(() => {
     // fetch('https://my-portfolio-backend-ten.vercel.app/api/projects')
-    fetch(`${API_BASE_URL}/projects`)
+    fetch(`${API_BASE_URL}/api/projects`)
 
       .then((res) => res.json())
       .then((data) => {

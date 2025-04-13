@@ -11,7 +11,7 @@ const About = () => {
   const [aboutDescription, setAboutDescription] = useState('');
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/getProfilePicture`)
+    fetch(`${API_BASE_URL}/api/getProfilePicture`)
       .then((res) => res.json())
       .then((data) => {
          // data.image is the base64 string
@@ -24,7 +24,7 @@ const About = () => {
 
   
   useEffect(() => {
-    fetch(`${API_BASE_URL}/getAboutDescription`)
+    fetch(`${API_BASE_URL}/api/getAboutDescription`)
     .then((res) => res.json())
     .then((data) => {
       setAboutDescription(data.description);
