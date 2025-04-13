@@ -105,7 +105,7 @@ const Projects = () => {
                   {project.description.substring(0, 100)}...
                 </p>
                 <p className="text-xs text-surface/75 dark:text-neutral-300">
-                  Last updated 3 mins ago
+                  Last updated 2 days ago
                 </p>
               </div>
             </motion.div>
