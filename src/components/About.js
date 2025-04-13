@@ -3,13 +3,15 @@
 import React, { useState, useEffect,  } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+// API_BASE_URL is set from the environment variable
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const About = () => {
   const [profilePicture, setProfilePicture] = useState(null);
   const [aboutDescription, setAboutDescription] = useState('');
 
   useEffect(() => {
-    fetch('https://my-portfolio-backend-ten.vercel.app/api/getProfilePicture')
+    fetch(`${API_BASE_URL}/getProfilePicture`)
       .then((res) => res.json())
       .then((data) => {
          // data.image is the base64 string
@@ -22,7 +24,7 @@ const About = () => {
 
   
   useEffect(() => {
-    fetch('https://my-portfolio-backend-ten.vercel.app/api/getAboutDescription')
+    fetch(`${API_BASE_URL}/getAboutDescription`)
     .then((res) => res.json())
     .then((data) => {
       setAboutDescription(data.description);

@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Modal from './Modal';
 import { motion } from 'framer-motion';
+// API_BASE_URL is set from the environment variable
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -11,7 +13,9 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    fetch('https://my-portfolio-backend-ten.vercel.app/api/projects')
+    // fetch('https://my-portfolio-backend-ten.vercel.app/api/projects')
+    fetch(`${API_BASE_URL}/projects`)
+
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
